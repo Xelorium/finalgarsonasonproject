@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginActivity"
+    android:gravity="right"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayarlar"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:text="Müşteri/İşletme Olarak Giriş Yap:"
+        android:textAlignment="center"
+        android:textSize="35dp" />
+
+    <EditText
+        android:id="@+id/userId_Edittext"
+        android:text="m@gmail.com"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:hint="E-Posta"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/userPassword_Edittext"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:hint="Şifre"
+        android:text="aslan1905"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/userLogin_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:text="Giriş Yap"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/forgotPassword_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Şifremi Unuttum"
+        android:clickable="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp">
+
+
+        <Button
+            android:id="@+id/support_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destek/Yardım"
+            android:textSize="15dp"
+            android:layout_gravity="right" />
+
+        <Button
+            android:id="@+id/reportBug_Button"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Hata Bildir"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

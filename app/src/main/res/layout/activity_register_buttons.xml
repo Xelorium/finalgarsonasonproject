@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="right">
+
+    <Button
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayarlar"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GARSONASON"
+        android:textSize="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/customerRegisterEntry_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Müşteri Kaydı"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp" />
+
+    <Button
+        android:id="@+id/businessRegisterEntry_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="İşletme Kaydı"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp">
+
+
+        <Button
+            android:id="@+id/support_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destek/Yardım"
+            android:textSize="15dp"
+            android:layout_gravity="right" />
+
+        <Button
+            android:id="@+id/reportBug_Button"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Hata Bildir"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

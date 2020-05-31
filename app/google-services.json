@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "685527804914",
+    "firebase_url": "https://garsonason.firebaseio.com",
+    "project_id": "garsonason",
+    "storage_bucket": "garsonason.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685527804914:android:3749f4a96aedea0216d96b",
+        "android_client_info": {
+          "package_name": "com.example.garsonason"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685527804914-g1d4g9utgkn494l8u8cdcas289sfa1jk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.garsonason",
+            "certificate_hash": "26afd2de7558334a42ac8d42645e0ba572a96c96"
+          }
+        },
+        {
+          "client_id": "685527804914-cdl65l4oiiqncqh3hg3595432qspgpcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-9f-0LzJlMGJbBVHzUmHJlFhWPiuLV48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685527804914-cdl65l4oiiqncqh3hg3595432qspgpcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
