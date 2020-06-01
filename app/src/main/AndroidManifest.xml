@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".customerChkActivity"></activity>
+        <activity android:name=".customerPayActivity"></activity>
+        <activity android:name=".customerChkActivity" />
         <activity android:name=".customerMenuActivity" />
         <activity android:name=".customerMainActivity" />
         <activity android:name=".listeCek" />

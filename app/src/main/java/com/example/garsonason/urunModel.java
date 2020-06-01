@@ -1,6 +1,8 @@
 package com.example.garsonason;
 
-public class urunModel {
+import java.io.Serializable;
+
+public class urunModel implements Serializable {
 
 
     public String urunAdi;

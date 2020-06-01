@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".customerChkActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="SİPARİŞ ÖZETİ"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <ListView
+        android:id="@+id/sepetListesi"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="#000000"
+        android:textStyle="bold">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toplamTutar"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/odemeVazgec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İPTAL ET"/>
+
+        <Button
+            android:id="@+id/odemeYap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ÖDEME YAP"/>
+
+    </LinearLayout>
+
+</LinearLayout>

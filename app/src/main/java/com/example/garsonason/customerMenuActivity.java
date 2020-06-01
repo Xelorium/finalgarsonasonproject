@@ -3,6 +3,7 @@ package com.example.garsonason;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,7 +40,7 @@ public class customerMenuActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference database_Ref;
     private DatabaseReference database_Ref2;
-    private ArrayAdapter<String> arrayAdapter;
+    public ArrayAdapter<String> arrayAdapter;
     //private ArrayAdapter<String> arrayAdapter2;
     private ArrayList<String> arrayList3;
     private ArrayList<String> arrayList4;
@@ -204,17 +205,28 @@ public class customerMenuActivity extends AppCompatActivity {
                         String date = new SimpleDateFormat("HH:mm dd-MM-yyyy").format(new Date());
 
 
-                        database_Ref = FirebaseDatabase.getInstance().getReference().child("Isletme_Siparisler").child(isletmeId).child(musteriId).child("sepet").push().child(date);
+//                        database_Ref = FirebaseDatabase.getInstance().getReference().child("Isletme_Siparisler").child(isletmeId).child(musteriId).child("sepet").push().child(date);
+//
+//                        database_Ref.setValue(sepet);
 
-                        database_Ref.setValue(sepet);
+                        Intent intent = new Intent(customerMenuActivity.this, customerChkActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("sepet", sepet);
+                        intent.putExtra("isId", isletmeId);
+                        intent.putExtra("musId", musteriId);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
 
-                        sepet.clear();
+
+
 
                         arrayAdapter2.notifyDataSetChanged();
                         if (sepet.size()<=0){
                             siparisVer.setVisibility(View.GONE);
                         }
+                        sepet.clear();
                         dialog.dismiss();
+                        startActivity(intent);
 
                     }
                 });
