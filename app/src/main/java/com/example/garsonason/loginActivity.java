@@ -97,6 +97,7 @@ public class loginActivity extends AppCompatActivity {
                                 intent.putExtra("id", id);
                                 progressDialog1.dismiss();
                                 startActivity(intent);
+                                finish();
 
                             } else if (model.getKullaniciTuru().equals("musteri")) {
 
@@ -104,6 +105,7 @@ public class loginActivity extends AppCompatActivity {
                                 progressDialog1.dismiss();
                                 intent2.putExtra("id2", id);
                                 startActivity(intent2);
+                                finish();
                             }
 
 

@@ -1,5 +1,7 @@
 package com.example.garsonason;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,5 +67,33 @@ public class customerMainActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(customerMainActivity.this);
+
+        builder.setTitle("ÇIKIŞ YAP");
+        builder.setMessage("Hesabınızdan gerçekten çıkış yapmak istiyor musunuz?");
+        builder.setCancelable(true);
+        builder.setPositiveButton("ÇIKIŞ YAP", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Intent intent = new Intent(customerMainActivity.this, loginActivity.class);
+                dialog.dismiss();
+                startActivity(intent);
+                finish();
+
+
+            }
+        });
+        builder.setNegativeButton("VAZGEÇ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.show();
     }
 }

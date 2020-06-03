@@ -31,6 +31,8 @@ public class businessMainActivity extends AppCompatActivity {
     private Button listeleButton;
     private FirebaseAuth mAuth;
     private DatabaseReference database_Ref;
+    private Button gelenSiparis;
+    private Button tamamSiparis;
 
 
     @Override
@@ -39,9 +41,35 @@ public class businessMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_business_main);
 
         businessAddProduct_Add_Button = findViewById(R.id.businessAddProduct_Add_Button);
-        listeleButton = findViewById(R.id.intent_Button);
+        listeleButton = findViewById(R.id.listele_Button);
+        gelenSiparis = findViewById(R.id.gelenSiparisButton);
+        tamamSiparis = findViewById(R.id.tamamSiparisButton);
+
 
         mAuth = FirebaseAuth.getInstance();
+        final String isletmeId = getIntent().getExtras().getString("id");
+
+        gelenSiparis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(businessMainActivity.this, businessOrderIdleActivity.class);
+                intent.putExtra("isId", isletmeId);
+                startActivity(intent);
+
+            }
+        });
+
+        tamamSiparis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(businessMainActivity.this, businessOrderCompletedActivity.class);
+                intent.putExtra("isId", isletmeId);
+                startActivity(intent);
+
+            }
+        });
 
         businessAddProduct_Add_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +95,6 @@ public class businessMainActivity extends AppCompatActivity {
         listeleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String isletmeId = getIntent().getExtras().getString("id");
                 Intent intent = new Intent(businessMainActivity.this, listeCek.class);
                 intent.putExtra("id2", isletmeId);
                 startActivity(intent);
@@ -102,4 +129,7 @@ public class businessMainActivity extends AppCompatActivity {
 
 
     }
+
+
+
 }

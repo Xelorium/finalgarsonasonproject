@@ -3,32 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="right"
     android:orientation="vertical"
-    tools:context=".loginActivity">
+    tools:context=".loginActivity"
+    android:weightSum="100"
+    >
 
     <Button
         android:id="@+id/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="35dp"
+        android:layout_gravity="right"
         android:text="Ayarlar" />
 
 
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="60"
+        android:weightSum="100">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_weight="15"
+            android:textColor="#000000"
             android:text="Ürün Ekle"
             android:textAlignment="center"
             android:textSize="30dp" />
@@ -37,9 +41,9 @@
 
             android:id="@+id/businessAddProduct_Name_Edittext"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="20"
             android:capitalize="words"
             android:hint="Ürün Adı"
             android:inputType="none|text|textCapWords"
@@ -50,9 +54,9 @@
         <EditText
             android:id="@+id/businessAddProduct_Type_Edittext"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="20"
             android:capitalize="words"
             android:hint="Türü"
             android:inputType="textCapWords"
@@ -63,10 +67,10 @@
         <EditText
             android:id="@+id/businessAddProduct_Cost_Edittext"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_weight="20"
             android:hint="Fiyat"
             android:inputType="number"
             android:singleLine="true"
@@ -76,36 +80,85 @@
         <Button
             android:id="@+id/businessAddProduct_Add_Button"
             android:layout_width="149dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_marginTop="18dp"
-            android:layout_weight="0.5"
+            android:layout_weight="20"
             android:text="Ekle"
             android:textSize="25dp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/intent_Button"
-            android:text="Listele" />
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/support_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_weight="0.03"
-            android:text="Destek/Yardım"
-            android:textSize="15dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="40"
+        android:gravity="left">
 
-        <Button
-            android:id="@+id/reportBug_Button"
-            android:layout_width="137dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Hata Bildir"
-            android:layout_weight="0.03"
-            android:textSize="15dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/listele_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menümü Listele"
+
+                />
+
+            <Button
+                android:id="@+id/gelenSiparisButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gelen Siparişler">
+
+            </Button>
+
+            <Button
+                android:id="@+id/tamamSiparisButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tamamlanan Siparişler">
+
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+
+
+            <Button
+                android:id="@+id/support_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Destek/Yardım"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/reportBug_Button"
+                android:layout_width="142dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Hata Bildir"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

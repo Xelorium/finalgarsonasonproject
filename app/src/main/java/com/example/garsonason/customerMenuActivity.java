@@ -52,7 +52,13 @@ public class customerMenuActivity extends AppCompatActivity {
     private Button siparisVer;
     sepetAdapter arrayAdapter2;
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (sepet.size()<=0){
+            siparisVer.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +89,8 @@ public class customerMenuActivity extends AppCompatActivity {
         final String isletmeId = getIntent().getExtras().getString("isId");
         System.out.println(isletmeId);
         System.out.println(musteriId);
+
+
 
 
         final DatabaseReference myRef = database.getReference().child("Isletme_Urunler_Bilgi").child(isletmeId);
@@ -202,12 +210,7 @@ public class customerMenuActivity extends AppCompatActivity {
                         for (int i=0;i<sepet.size();i++){
                             sepet.get(i).fiyat*=sepet.get(i).miktar;
                         }
-                        String date = new SimpleDateFormat("HH:mm dd-MM-yyyy").format(new Date());
 
-
-//                        database_Ref = FirebaseDatabase.getInstance().getReference().child("Isletme_Siparisler").child(isletmeId).child(musteriId).child("sepet").push().child(date);
-//
-//                        database_Ref.setValue(sepet);
 
                         Intent intent = new Intent(customerMenuActivity.this, customerChkActivity.class);
                         Bundle bundle = new Bundle();
@@ -215,8 +218,6 @@ public class customerMenuActivity extends AppCompatActivity {
                         intent.putExtra("isId", isletmeId);
                         intent.putExtra("musId", musteriId);
                         intent.putExtras(bundle);
-                        startActivity(intent);
-
 
 
 
@@ -224,9 +225,10 @@ public class customerMenuActivity extends AppCompatActivity {
                         if (sepet.size()<=0){
                             siparisVer.setVisibility(View.GONE);
                         }
-                        sepet.clear();
                         dialog.dismiss();
                         startActivity(intent);
+                        sepet.clear();
+
 
                     }
                 });

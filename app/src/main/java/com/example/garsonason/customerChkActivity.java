@@ -21,7 +21,7 @@ public class customerChkActivity extends AppCompatActivity {
     private ArrayList<String> arrayList;
     private ListView siparisOzetiTextView;
     ArrayAdapter<String> arrayAdapter;
-    private Double araTop;
+    private int araTop;
     private TextView toplamTutar;
     private Button odemeYap;
     private Button odemeVazgec;
@@ -41,28 +41,32 @@ public class customerChkActivity extends AppCompatActivity {
         odemeYap = findViewById(R.id.odemeYap);
         odemeVazgec = findViewById(R.id.odemeVazgec);
 
-        final Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
+
         ozet = (ArrayList<urunModel>) bundle.getSerializable("sepet");
         for (int i=0; i<ozet.size(); i++) {
-            arrayList.add("Urun Adı: "+ ozet.get(i).urunAdi+" Miktar: "+ ozet.get(i).miktar+" Ürün Fiyatı: "+ ozet.get(i).fiyat);
+            arrayList.add("Urun Adı: "+ ozet.get(i).urunAdi+" Miktar: "+ ozet.get(i).miktar+" Ürün Fiyatı: "+ ozet.get(i).fiyat+"TL");
             araTop+= ozet.get(i).fiyat;
         }
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, arrayList);
-        toplamTutar.setText("Toplam Tutar: "+araTop+"TL");
 
 
         siparisOzetiTextView.setAdapter(arrayAdapter);
+        toplamTutar.setText("Toplam Tutar: "+araTop+"TL");
+
 
 
         odemeYap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(customerChkActivity.this, customerPayActivity.class);
-                bundle.putSerializable("ozet",ozet);
+                Bundle bundle2 = new Bundle();
+                bundle2.putSerializable("gonder",ozet);
                 intent.putExtra("isId", getIntent().getStringExtra("isId"));
                 intent.putExtra("musId", getIntent().getStringExtra("musId"));
-                intent.putExtra("araTop",araTop);
-                intent.putExtras(bundle);
+                intent.putExtra("araTop",String.valueOf(araTop));
+                intent.putExtras(bundle2);
                 startActivity(intent);
             }
         });
@@ -79,10 +83,11 @@ public class customerChkActivity extends AppCompatActivity {
                 builder.setPositiveButton("ONAYLA", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                Intent intent2 = new Intent(customerChkActivity.this, customerMenuActivity.class);
+
 
                 dialog.dismiss();
-                startActivity(intent2);
+                finish();
+
 
                     }
                 });
@@ -98,12 +103,31 @@ public class customerChkActivity extends AppCompatActivity {
 
             }
         });
+    }
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(customerChkActivity.this);
+
+        builder.setTitle("SİPARİŞ İPTALİ");
+        builder.setMessage("Siparişi gerçekten iptal etmek istiyor musunuz?");
+        builder.setCancelable(true);
+        builder.setPositiveButton("ONAYLA", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
 
+                dialog.dismiss();
+                finish();
 
 
+            }
+        });
+        builder.setNegativeButton("VAZGEÇ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
 
-
-
+        builder.show();
     }
 }
