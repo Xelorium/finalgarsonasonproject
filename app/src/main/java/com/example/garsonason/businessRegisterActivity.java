@@ -29,6 +29,7 @@ public class businessRegisterActivity extends AppCompatActivity {
     private EditText businessRegister_password_Edittext;
     private EditText businessRegister_passwordRepeat_Edittext;
     private EditText businessRegister_phoneNumber_Edittext;
+    private EditText businessRegister_Reference_Edittext;
     private DatabaseReference database_Ref;
     private ProgressDialog progressDialog1;
 
@@ -44,6 +45,7 @@ public class businessRegisterActivity extends AppCompatActivity {
         businessRegister_passwordRepeat_Edittext = findViewById(R.id.businessRegister_passwordRepeat_Edittext);
         businessRegister_phoneNumber_Edittext = findViewById(R.id.businessRegister_phoneNumber_Edittext);
         progressDialog1 = new ProgressDialog(this);
+        businessRegister_Reference_Edittext = findViewById(R.id.businessRegister_Reference_Edittext);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -52,6 +54,7 @@ public class businessRegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
+                String refNo = businessRegister_Reference_Edittext.getText().toString();
                 String posta = businessRegister_mail_Edittext.getText().toString();
                 String sifre = businessRegister_password_Edittext.getText().toString();
                 String kullaniciAdi = businessRegister_id_Edittext.getText().toString();
@@ -62,7 +65,15 @@ public class businessRegisterActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(posta) && !TextUtils.isEmpty(sifre) && !TextUtils.isEmpty(sifreTekrar) && !TextUtils.isEmpty(telNo)) {
                     if (TextUtils.equals(sifre, sifreTekrar)) {
-                        kayitOl(posta, sifre, kullaniciAdi, telNo, puan, adres);
+                        if (refNo.equals("318881")){
+                            kayitOl(posta, sifre, kullaniciAdi, telNo, puan, adres);
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "Referans numaranız geçersiz.", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
 
                     } else {
                         Toast.makeText(getApplicationContext(), "Şifre tekrarını doğru girdiğinizden emin olun.", Toast.LENGTH_SHORT).show();
@@ -108,6 +119,7 @@ public class businessRegisterActivity extends AppCompatActivity {
                                         progressDialog1.dismiss();
                                         Toast.makeText(getApplicationContext(), "Kayıt işlemi başarıyla tamamlandı!", Toast.LENGTH_SHORT).show();
                                         startActivity(kayitTamamlandi);
+                                        finish();
 
                                     }
 

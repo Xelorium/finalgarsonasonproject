@@ -132,7 +132,7 @@ public class customerMenuActivity extends AppCompatActivity {
                 /*String deneme=arrayList.get(position);
                 Toast.makeText(getApplicationContext(), deneme, Toast.LENGTH_SHORT).show();*/
                 final String urunAdi=arrayList4.get(position);
-                String urunDurum = "beklemede";
+                String urunDurum = "Beklemede";
                 String fiyat = arrayList3.get(position);
                 urunModel urunmodel = new urunModel();
                 urunmodel.urunAdi=urunAdi;
@@ -228,6 +228,7 @@ public class customerMenuActivity extends AppCompatActivity {
                         dialog.dismiss();
                         startActivity(intent);
                         sepet.clear();
+                        finish();
 
 
                     }

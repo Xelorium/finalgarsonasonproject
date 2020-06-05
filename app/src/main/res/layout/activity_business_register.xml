@@ -14,109 +14,130 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_gravity="center">
-
-        <Button
-            android:layout_weight="0.1"
-            android:id="@+id/settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Ayarlar" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="İşletme Olarak Kayıt Ol:"
-            android:textAlignment="center"
-            android:textSize="30dp" />
-
-        <EditText
-
-            android:id="@+id/businessRegister_id_Edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-
-            android:editable="false"
-            android:hint="Kullanıcı Adı"
-            android:inputType="text"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/businessRegister_mail_Edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:hint="E-Posta"
-            android:inputType="textEmailAddress"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/businessRegister_password_Edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:hint="Şifre"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/businessRegister_passwordRepeat_Edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:hint="Şifre Tekrarı"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/businessRegister_phoneNumber_Edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:hint="Telefon Numarası"
-            android:inputType="number"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textSize="20dp" />
-
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/businessRegister_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="18dp"
-            android:text="Kayıt Ol"
-            android:textSize="25dp" />
+        android:layout_gravity="center"
+        android:weightSum="100">
 
         <LinearLayout
-            android:layout_weight="0.5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="vertical"
-            android:gravity="bottom">
+            android:layout_weight="80"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="İşletme Olarak Kayıt Ol:"
+                    android:textAlignment="center"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <EditText
+                    android:layout_marginTop="55dp"
+                    android:id="@+id/businessRegister_id_Edittext"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="Kullanıcı Adı"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/businessRegister_mail_Edittext"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="E-Posta"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/businessRegister_password_Edittext"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:hint="Şifre"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/businessRegister_passwordRepeat_Edittext"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:hint="Şifre Tekrarı"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/businessRegister_phoneNumber_Edittext"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:hint="Telefon Numarası"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/businessRegister_Reference_Edittext"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:hint="Referans Numarası"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/businessRegister_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="18dp"
+                    android:text="Kayıt Ol"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:layout_weight="20">
 
             <Button
-                android:layout_weight="0.3"
                 android:id="@+id/support_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +146,6 @@
                 android:textSize="15dp" />
 
             <Button
-                android:layout_weight="0.5"
                 android:id="@+id/reportBug_Button"
                 android:layout_width="137dp"
                 android:layout_height="wrap_content"

@@ -40,7 +40,35 @@ public class customerPayActivity extends AppCompatActivity {
     private ProgressDialog progressDialog1;
 
 
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(customerPayActivity.this);
 
+        builder.setTitle("MENÜYE GERİ DÖN");
+        builder.setMessage("Menüye gerçekten geri dönmek istiyor musunuz? Bu işlem siparişinizi iptal edecektir.");
+        builder.setCancelable(true);
+        builder.setPositiveButton("MENÜYE DÖN", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Intent intent = new Intent(customerPayActivity.this, customerMenuActivity.class);
+                intent.putExtra("isId", getIntent().getStringExtra("isId"));
+                intent.putExtra("musId", getIntent().getStringExtra("musId"));
+                dialog.dismiss();
+                startActivity(intent);
+                finish();
+
+
+            }
+        });
+        builder.setNegativeButton("VAZGEÇ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.show();
+    }
 
 
     @Override
@@ -96,7 +124,7 @@ public class customerPayActivity extends AppCompatActivity {
                         progressDialog1.show();
 
 
-                        String date = new SimpleDateFormat("HH:mm dd-MM-yyyy").format(new Date());
+                        String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                         database_Ref = FirebaseDatabase.getInstance().getReference().child("Isletme_Siparisler").child(isletmeId).child(musteriId).child("sepet").push().child(date);
                         database_Ref.setValue(odemeOzet).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

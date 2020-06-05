@@ -111,6 +111,7 @@ public class customerRegisterActivity extends AppCompatActivity {
                                 progressDialog1.dismiss();
                                 Toast.makeText(getApplicationContext(), "Kayıt işlemi başarıyla tamamlandı!", Toast.LENGTH_SHORT).show();
                                 startActivity(kayitTamamlandi);
+                                finish();
                             }
                         }
                     });

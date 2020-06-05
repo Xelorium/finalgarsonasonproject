@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,16 +23,19 @@ public class customerMainActivity extends AppCompatActivity {
 
     private EditText idBusiness;
     private Button codeSubmit_Button;
+    private Button customerLogoutButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
         final String musteriId = getIntent().getExtras().getString("id2");
+        final String isletmeId = getIntent().getExtras().getString("isId");
+
         System.out.println(musteriId);
         idBusiness = findViewById(R.id.idBusiness);
         codeSubmit_Button = findViewById(R.id.codeSubmit_Button);
-
         codeSubmit_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,20 +47,24 @@ public class customerMainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                        System.out.println(kod);
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             dataSnapshot.getKey();
                             keepData model = ds.getValue(keepData.class);
-                            System.out.println(model.getAdres());
-                            if (model.getIsletmeKodu().equals(kod)) {
 
-                                Intent intent = new Intent(customerMainActivity.this, customerMenuActivity.class);
+
+                             if (model.getIsletmeKodu().equals(kod)) {
+
+                                Intent intent = new Intent(customerMainActivity.this, customerPanelActivity.class);
                                 intent.putExtra("isId", model.getIsletmeKodu());
                                 intent.putExtra("musId", musteriId);
+                                finish();
                                 startActivity(intent);
 
                             }
+
+
                         }
+
 
 
                     }

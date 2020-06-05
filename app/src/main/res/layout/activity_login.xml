@@ -27,7 +27,7 @@
 
     <EditText
         android:id="@+id/userId_Edittext"
-        android:text="m@gmail.com"
+        android:text="i@gmail.com"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

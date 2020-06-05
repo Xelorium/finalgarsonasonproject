@@ -68,6 +68,7 @@ public class customerChkActivity extends AppCompatActivity {
                 intent.putExtra("araTop",String.valueOf(araTop));
                 intent.putExtras(bundle2);
                 startActivity(intent);
+                finish();
             }
         });
 

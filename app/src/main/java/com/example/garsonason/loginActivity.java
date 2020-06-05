@@ -53,6 +53,10 @@ public class loginActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(kullaniciAdi) && !TextUtils.isEmpty(kullaniciSifre)) {
 
                     login_user(kullaniciAdi, kullaniciSifre);
+                    progressDialog1.setTitle("Giriş Yapılıyor");
+                    progressDialog1.setMessage("Lütfen bekleyin...");
+                    progressDialog1.setCanceledOnTouchOutside(false);
+                    progressDialog1.show();
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Eksik veya yanlış girdi. ", Toast.LENGTH_LONG).show();
@@ -80,10 +84,7 @@ public class loginActivity extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
                     DatabaseReference myRef2 = database.getReference().child("tbl_kullanicilar").child(id);
-                    progressDialog1.setTitle("Giriş Yapılıyor");
-                    progressDialog1.setMessage("Lütfen bekleyin...");
-                    progressDialog1.setCanceledOnTouchOutside(false);
-                    progressDialog1.show();
+
                     myRef2.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -94,8 +95,8 @@ public class loginActivity extends AppCompatActivity {
 
 
                                 Intent intent = new Intent(loginActivity.this, businessMainActivity.class);
-                                intent.putExtra("id", id);
                                 progressDialog1.dismiss();
+                                intent.putExtra("id", id);
                                 startActivity(intent);
                                 finish();
 

@@ -4,60 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".listeCek"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="100">
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SEPETE ÜRÜN EKLE:"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textColor="#000000">
-
-    </TextView>
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/urunleriListele_Musteri_ListView"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
-
-
-    </ListView>
-
-    <TextView
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:text="SEPETTEKİ ÜRÜNLER:"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
-
-    </TextView>
-
-    <ListView
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sepettekileriListele_MusteriListView">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="50">
 
-    </ListView>
 
-    <Button
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Onayla"
-        android:id="@+id/siparisVer"
-        android:visibility="gone"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEPETE ÜRÜN EKLE:"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000000">
+
+        </TextView>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/urunleriListele_Musteri_ListView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="85">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:text="SEPETTEKİ ÜRÜNLER:"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+            </TextView>
+
+            <ListView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sepettekileriListele_MusteriListView">
+
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onayla"
+                android:id="@+id/siparisVer"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>
