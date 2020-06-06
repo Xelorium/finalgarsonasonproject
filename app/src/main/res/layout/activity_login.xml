@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginActivity"
     android:gravity="right"
     android:orientation="vertical"
-    android:background="#69A3D400"
-    >
+    android:background="#69A3D400">
 
 
     <LinearLayout
@@ -29,11 +29,12 @@
                 android:layout_width="297dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="#000000"
                 android:layout_marginTop="55dp"
                 android:text="Müşteri/İşletme Olarak Giriş Yap:"
                 android:textAlignment="center"
-                android:textSize="35dp" />
+                android:textColor="#000000"
+                android:textSize="35dp"
+                app:fontFamily="@font/acme" />
 
             <EditText
                 android:id="@+id/userId_Edittext"
@@ -62,6 +63,7 @@
                 android:textSize="20dp" />
 
             <Button
+                android:background="@drawable/custom_button_green"
                 android:id="@+id/userLogin_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,15 +76,13 @@
                 android:id="@+id/forgotPassword_Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Şifremi Unuttum"
-                android:clickable="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/colorPrimary" />
+                android:clickable="true"
+                android:text="Şifremi Unuttum"
+                android:textColor="@color/colorPrimary"
+                app:fontFamily="@font/acme" />
         </LinearLayout>
-
-
-
 
 
         <Button
@@ -91,9 +91,11 @@
             android:layout_height="wrap_content"
             android:text="Destek/Yardım"
             android:textSize="15dp"
-            android:layout_gravity="right" />
+            android:layout_gravity="right"
+            android:visibility="invisible" />
 
         <Button
+            android:background="@drawable/custom_button_misc"
             android:id="@+id/reportBug_Button"
             android:layout_width="137dp"
             android:layout_height="wrap_content"

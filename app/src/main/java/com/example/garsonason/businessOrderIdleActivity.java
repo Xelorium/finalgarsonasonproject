@@ -1,19 +1,15 @@
 package com.example.garsonason;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -79,7 +75,7 @@ public class businessOrderIdleActivity extends AppCompatActivity {
                     final String a = ds.getKey();
                     final keepData model = ds.getValue(keepData.class);
 
-                    if (model.getKullaniciTuru().equals("musteri")){
+                    if (model.getKullaniciTuru().equals("musteri")) {
 
                         final DatabaseReference myRef = database.getReference().child("Isletme_Siparisler").child(isletmeId).child(a).child("sepet");
 
@@ -91,19 +87,18 @@ public class businessOrderIdleActivity extends AppCompatActivity {
                                     String b = ds.getKey();
                                     final String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                                     arrayList.add(b);
-                                    arrayList6.add("Siparişi Veren: "+model.getKullaniciAdi());
+                                    arrayList6.add("Siparişi Veren: " + model.getKullaniciAdi());
                                     arrayList5.add(a);
-                                    idleListView.setAdapter( arrayAdapter);
+                                    idleListView.setAdapter(arrayAdapter);
 
                                     arrayAdapter.notifyDataSetChanged();
 
 
                                 }
 
-                                if (arrayAdapter.isEmpty()){
+                                if (arrayAdapter.isEmpty()) {
                                     ordersDone2.setVisibility(View.VISIBLE);
-                                }
-                                else if(!arrayAdapter.isEmpty()){
+                                } else if (!arrayAdapter.isEmpty()) {
                                     ordersDone2.setVisibility(View.GONE);
                                 }
                             }
@@ -127,11 +122,11 @@ public class businessOrderIdleActivity extends AppCompatActivity {
         idleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-             Intent intent= new Intent(businessOrderIdleActivity.this,busnismusnisActivity.class);
-             intent.putExtra("pus",arrayList.get(position));
-             intent.putExtra("mId",arrayList5.get(position));
-             startActivity(intent);
-             finish();
+                Intent intent = new Intent(businessOrderIdleActivity.this, busnismusnisActivity.class);
+                intent.putExtra("pus", arrayList.get(position));
+                intent.putExtra("mId", arrayList5.get(position));
+                startActivity(intent);
+                finish();
             }
         });
 

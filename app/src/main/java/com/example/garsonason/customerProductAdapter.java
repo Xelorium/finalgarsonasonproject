@@ -25,7 +25,7 @@ public class customerProductAdapter {
 
     }
 
-    public customerProductAdapter(String date, String urunAdi, String urunFiyat, String urunTipi, String urunDurumu,String siparisId) {
+    public customerProductAdapter(String date, String urunAdi, String urunFiyat, String urunTipi, String urunDurumu, String siparisId) {
         this.date = date;
         this.urunAdi = urunAdi;
         this.urunFiyat = urunFiyat;
@@ -49,7 +49,6 @@ public class customerProductAdapter {
     public String geturunTipi() {
         return urunTipi;
     }
-
 
 
 }

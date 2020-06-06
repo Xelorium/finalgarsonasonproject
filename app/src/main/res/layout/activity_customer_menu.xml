@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".listeCek"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="#69A3D400"
-    >
+    android:background="#69A3D400">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,14 +17,15 @@
 
 
         <TextView
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SEPETE ÜRÜN EKLE:"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="SEPETE ÜRÜN EKLE:"
+            android:textColor="#000000"
             android:textStyle="bold"
-            android:textColor="#000000">
+            app:fontFamily="@font/acme">
 
         </TextView>
 
@@ -54,14 +55,15 @@
             android:layout_weight="85">
 
             <TextView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:text="SEPETTEKİ ÜRÜNLER:"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:text="SEPETTEKİ ÜRÜNLER:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:fontFamily="@font/acme">
 
             </TextView>
 
@@ -84,20 +86,18 @@
             android:gravity="center">
 
             <Button
+                android:background="@drawable/custom_button_green"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Onayla"
                 android:id="@+id/siparisVer"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
         </LinearLayout>
 
 
-
     </LinearLayout>
-
-
 
 
 </LinearLayout>

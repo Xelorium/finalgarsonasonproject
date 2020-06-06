@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".businessOrderIdleActivity"
     android:orientation="vertical"
-    android:background="#69A3D400"
-    >
+    android:background="#69A3D400">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,14 +15,15 @@
         android:weightSum="100">
 
         <TextView
+            android:id="@+id/customerNameTextView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/customerNameTextView"
-            android:text="GELEN SİPARİŞLER"
+            android:layout_weight="15"
             android:gravity="center"
+            android:text="GELEN SİPARİŞLER"
             android:textColor="#E31919"
             android:textStyle="bold"
-            android:layout_weight="15">
+            app:fontFamily="@font/acme">
 
         </TextView>
 
@@ -64,11 +64,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:text="Gerİ Dön"
+            android:background="@drawable/custom_button"
             android:id="@+id/businessGetBackButton">
 
         </Button>
-
-
 
 
     </LinearLayout>

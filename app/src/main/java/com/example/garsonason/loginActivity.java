@@ -44,6 +44,16 @@ public class loginActivity extends AppCompatActivity {
         progressDialog1 = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
 
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(loginActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
+
         userLogin_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

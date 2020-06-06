@@ -1,8 +1,5 @@
 package com.example.garsonason;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -13,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,7 +40,7 @@ public class customerPayActivity extends AppCompatActivity {
     private ProgressDialog progressDialog1;
 
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(customerPayActivity.this);
 
         builder.setTitle("MENÜYE GERİ DÖN");
@@ -90,7 +90,6 @@ public class customerPayActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-
         Bundle bundle3 = getIntent().getExtras();
         final String musteriId = getIntent().getExtras().getString("musId");
         final String isletmeId = getIntent().getExtras().getString("isId");
@@ -98,7 +97,7 @@ public class customerPayActivity extends AppCompatActivity {
         odemeOzet = (ArrayList<urunModel>) bundle3.getSerializable("gonder");
 
 
-        toplamOdeme.setText(araTop +"TL");
+        toplamOdeme.setText(araTop + "TL");
 
         chkoutOde.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,17 +111,16 @@ public class customerPayActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(kartName)
                         && !TextUtils.isEmpty(kartNo)
                         && !TextUtils.isEmpty(kartSkt)
-                        && !TextUtils.isEmpty(kartCvc)){
+                        && !TextUtils.isEmpty(kartCvc)) {
 
-                    if (kartNo.length()>7
-                            && kartSkt.length()>3
-                            && kartCvc.length()>2){
+                    if (kartNo.length() > 7
+                            && kartSkt.length() > 3
+                            && kartCvc.length() > 2) {
 
                         progressDialog1.setTitle("SİPARİŞ TAMAMLANIYOR");
                         progressDialog1.setMessage("Lütfen bekleyin...");
                         progressDialog1.setCanceledOnTouchOutside(false);
                         progressDialog1.show();
-
 
 
                         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
@@ -131,7 +129,7 @@ public class customerPayActivity extends AppCompatActivity {
                         database_Ref.setValue(odemeOzet).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
+                                if (task.isSuccessful()) {
                                     Intent intent = new Intent(customerPayActivity.this, customerMenuActivity.class);
                                     intent.putExtra("isId", getIntent().getStringExtra("isId"));
                                     intent.putExtra("musId", getIntent().getStringExtra("musId"));
@@ -145,14 +143,12 @@ public class customerPayActivity extends AppCompatActivity {
                         });
 
 
-                    }
-                    else{
+                    } else {
                         Toast.makeText(getApplicationContext(), "Hata. Lütfen alanları eksik veya boş geçmeyin ve tekrar deneyin.", Toast.LENGTH_SHORT).show();
                     }
 
 
-                }
-                else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Hata. Alanların boş olmadığından veya doğru girildiğinden emin olun ve tekrar deneyin.", Toast.LENGTH_SHORT).show();
                 }
 

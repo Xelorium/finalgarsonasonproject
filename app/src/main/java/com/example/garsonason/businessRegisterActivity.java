@@ -49,6 +49,16 @@ public class businessRegisterActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(businessRegisterActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
         businessRegister_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,14 +75,11 @@ public class businessRegisterActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(posta) && !TextUtils.isEmpty(sifre) && !TextUtils.isEmpty(sifreTekrar) && !TextUtils.isEmpty(telNo)) {
                     if (TextUtils.equals(sifre, sifreTekrar)) {
-                        if (refNo.equals("318881")){
+                        if (refNo.equals("318881")) {
                             kayitOl(posta, sifre, kullaniciAdi, telNo, puan, adres);
-                        }
-                        else {
+                        } else {
                             Toast.makeText(getApplicationContext(), "Referans numaranız geçersiz.", Toast.LENGTH_SHORT).show();
                         }
-
-
 
 
                     } else {

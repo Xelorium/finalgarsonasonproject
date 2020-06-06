@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,8 +8,7 @@
     android:orientation="vertical"
     tools:context=".loginActivity"
     android:weightSum="100"
-    android:background="#69A3D400"
-    >
+    android:background="#69A3D400">
 
 
     <LinearLayout
@@ -44,6 +44,8 @@
             android:orientation="horizontal">
 
             <Button
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_button_red"
                 android:id="@+id/customerPostLogoutButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,24 +73,27 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginBottom="50dp"
-            android:textColor="#FFC107"
             android:gravity="center"
             android:text="HOŞGELDİNİZ!"
-            android:textSize="50dp">
+            android:textColor="#FFC107"
+            android:textSize="50dp"
+            app:fontFamily="@font/acme">
 
         </TextView>
 
         <Button
-          android:id="@+id/customerOrdersButton"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:text="SİPARİŞLERİM"
-          android:layout_marginBottom="15dp">
+            android:background="@drawable/custom_button"
+            android:id="@+id/customerOrdersButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="SİPARİŞLERİM"
+            android:layout_marginBottom="15dp">
 
-      </Button>
+        </Button>
 
         <Button
+            android:background="@drawable/custom_button"
             android:layout_gravity="center"
             android:id="@+id/customerMenuButton"
             android:layout_width="wrap_content"
@@ -97,7 +102,6 @@
             android:layout_marginBottom="15dp">
 
         </Button>
-
 
 
     </LinearLayout>
@@ -117,6 +121,7 @@
             android:gravity="bottom">
 
             <Button
+                android:background="@drawable/custom_button_red"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="İşletme değİştİr"
@@ -142,9 +147,11 @@
                 android:layout_marginRight="10dp"
                 android:layout_gravity="right"
                 android:text="Destek/Yardım"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:visibility="invisible" />
 
             <Button
+                android:background="@drawable/custom_button_misc"
                 android:id="@+id/reportBug_Button"
                 android:layout_width="137dp"
                 android:layout_height="wrap_content"
@@ -154,7 +161,6 @@
                 android:text="Hata Bİldİr"
                 android:textSize="15dp" />
         </LinearLayout>
-
 
 
     </LinearLayout>

@@ -59,7 +59,7 @@ public class businessMainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         final String isletmeId = getIntent().getExtras().getString("id");
 
-        userId.setText("Kullanıcı adı: "+ isletmeId);
+        userId.setText("Kullanıcı adı: " + isletmeId);
 
         final DatabaseReference myRef2 = database.getReference().child("tbl_kullanicilar");
         myRef2.addValueEventListener(new ValueEventListener() {
@@ -68,8 +68,8 @@ public class businessMainActivity extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String a = ds.getKey();
                     keepData model = ds.getValue(keepData.class);
-                    if (isletmeId.equals(a)){
-                        userId.setText("Kullanıcı Adı: "+ model.getKullaniciAdi());
+                    if (isletmeId.equals(a)) {
+                        userId.setText("Kullanıcı Adı: " + model.getKullaniciAdi());
                     }
 
                 }
@@ -78,6 +78,16 @@ public class businessMainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(businessMainActivity.this, reportBugActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -193,7 +203,7 @@ public class businessMainActivity extends AppCompatActivity {
 
     }
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(businessMainActivity.this);
 
         builder.setTitle("ÇIKIŞ YAP");
@@ -220,8 +230,6 @@ public class businessMainActivity extends AppCompatActivity {
 
         builder.show();
     }
-
-
 
 
 }

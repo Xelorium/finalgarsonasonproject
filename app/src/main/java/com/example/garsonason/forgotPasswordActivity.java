@@ -1,5 +1,6 @@
 package com.example.garsonason;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,16 @@ public class forgotPasswordActivity extends AppCompatActivity {
         passwordResetButton = findViewById(R.id.passwordReset_Button);
         passwordResetEdittext = findViewById(R.id.passwordReset_email_Edittext);
         mAuth = FirebaseAuth.getInstance();
+
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(forgotPasswordActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
 
         passwordResetButton.setOnClickListener(new View.OnClickListener() {
             @Override

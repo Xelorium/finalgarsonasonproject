@@ -1,8 +1,5 @@
 package com.example.garsonason;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,6 +11,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -58,7 +58,6 @@ public class busnismusnisActivity extends AppCompatActivity {
         final String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 
 
-
         businessGetBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,8 +75,8 @@ public class busnismusnisActivity extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String a = ds.getKey();
                     keepData model = ds.getValue(keepData.class);
-                    if (isletmeId.equals(a)){
-                        customerNameTextView.setText(model.getKullaniciAdi()+" Kullanıcısından Gelen Siparişler");
+                    if (isletmeId.equals(a)) {
+                        customerNameTextView.setText(model.getKullaniciAdi() + " Kullanıcısından Gelen Siparişler");
                     }
 
                 }
@@ -118,10 +117,9 @@ public class busnismusnisActivity extends AppCompatActivity {
 
 
                                 }
-                                if (arrayAdapter.isEmpty()){
+                                if (arrayAdapter.isEmpty()) {
                                     ordersDone.setVisibility(View.VISIBLE);
-                                }
-                                else if(!arrayAdapter.isEmpty()){
+                                } else if (!arrayAdapter.isEmpty()) {
                                     ordersDone.setVisibility(View.GONE);
                                 }
 
@@ -240,7 +238,6 @@ public class busnismusnisActivity extends AppCompatActivity {
                 builder.show();
             }
         });
-
 
 
     }

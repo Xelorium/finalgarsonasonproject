@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".loginActivity"
     android:weightSum="100"
-    android:background="#69A3D400"
-    >
+    android:background="#69A3D400">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:text="deneme"
-                android:textColor="#000000">
+                android:textColor="#000000"
+                app:fontFamily="@font/acme">
 
             </TextView>
         </LinearLayout>
@@ -41,12 +42,15 @@
             android:layout_weight="25"
             android:gravity="right"
             android:orientation="horizontal">
+
             <Button
+                android:background="@drawable/custom_button_red"
+                android:layout_marginTop="10dp"
                 android:id="@+id/businessLogoutButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Çıkış Yap"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp" />
         </LinearLayout>
 
 
@@ -66,12 +70,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="15"
-            android:textColor="#000000"
+            android:gravity="center"
             android:text="Ürün Ekle"
             android:textAlignment="center"
-            android:textSize="30dp" />
+            android:textColor="#000000"
+            android:textSize="30dp"
+            app:fontFamily="@font/acme" />
 
         <EditText
 
@@ -114,6 +119,7 @@
             android:textSize="20dp" />
 
         <Button
+            android:background="@drawable/custom_button_green"
             android:id="@+id/businessAddProduct_Add_Button"
             android:layout_width="149dp"
             android:layout_height="0dp"
@@ -142,6 +148,7 @@
             android:gravity="bottom">
 
             <Button
+                android:background="@drawable/custom_button"
                 android:id="@+id/listele_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -150,6 +157,8 @@
                 />
 
             <Button
+                android:background="@drawable/custom_button"
+                android:layout_marginTop="5dp"
                 android:id="@+id/gelenSiparisButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,6 +167,9 @@
             </Button>
 
             <Button
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_button"
+
                 android:id="@+id/tamamSiparisButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -183,9 +195,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="Destek/Yardım"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:visibility="invisible" />
 
             <Button
+                android:background="@drawable/custom_button_misc"
+
                 android:id="@+id/reportBug_Button"
                 android:layout_width="142dp"
                 android:layout_height="wrap_content"

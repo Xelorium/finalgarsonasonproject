@@ -47,6 +47,16 @@ public class customerRegisterActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(customerRegisterActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
+
         customerRegister_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

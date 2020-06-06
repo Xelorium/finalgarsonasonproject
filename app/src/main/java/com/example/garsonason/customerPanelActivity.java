@@ -1,8 +1,5 @@
 package com.example.garsonason;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -39,8 +39,8 @@ public class customerPanelActivity extends AppCompatActivity {
         customerMenuButton = findViewById(R.id.customerMenuButton);
         customerChangeisId = findViewById(R.id.customerChangeisId);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final String musteriId= getIntent().getExtras().getString("musId");
-        final String isletmeId= getIntent().getExtras().getString("isId");
+        final String musteriId = getIntent().getExtras().getString("musId");
+        final String isletmeId = getIntent().getExtras().getString("isId");
 
         final DatabaseReference myRef2 = database.getReference().child("tbl_kullanicilar");
         myRef2.addValueEventListener(new ValueEventListener() {
@@ -49,8 +49,8 @@ public class customerPanelActivity extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String a = ds.getKey();
                     keepData model = ds.getValue(keepData.class);
-                    if (musteriId.equals(a)){
-                        customerPostUserId.setText("Kullanıcı Adı: "+ model.getKullaniciAdi());
+                    if (musteriId.equals(a)) {
+                        customerPostUserId.setText("Kullanıcı Adı: " + model.getKullaniciAdi());
                     }
 
                 }
@@ -63,6 +63,15 @@ public class customerPanelActivity extends AppCompatActivity {
         });
 
 
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(customerPanelActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         customerChangeisId.setOnClickListener(new View.OnClickListener() {
@@ -151,12 +160,9 @@ public class customerPanelActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(customerPanelActivity.this);
 
         builder.setTitle("ÇIKIŞ YAP");

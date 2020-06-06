@@ -17,6 +17,16 @@ public class registerButtonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_buttons);
 
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(registerButtonsActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
+
         musteriKaydiButonu = findViewById(R.id.customerRegisterEntry_Button);
         musteriKaydiButonu.setOnClickListener(new View.OnClickListener() {
             @Override

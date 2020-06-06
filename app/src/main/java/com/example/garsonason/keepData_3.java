@@ -1,7 +1,5 @@
 package com.example.garsonason;
 
-import java.io.Serializable;
-
 public class keepData_3 {
 
 
@@ -11,16 +9,14 @@ public class keepData_3 {
     public String durum;
 
 
-
-
-
-    public keepData_3(String urunAdi, Integer miktar, Integer fiyat,String durum) {
+    public keepData_3(String urunAdi, Integer miktar, Integer fiyat, String durum) {
         this.urunAdi = urunAdi;
         this.miktar = miktar;
         this.fiyat = fiyat;
         this.durum = durum;
 
     }
+
     public String getDurum() {
         return durum;
     }
@@ -28,6 +24,7 @@ public class keepData_3 {
     public void setDurum(String durum) {
         this.durum = durum;
     }
+
     public String getUrunAdi() {
         return urunAdi;
     }

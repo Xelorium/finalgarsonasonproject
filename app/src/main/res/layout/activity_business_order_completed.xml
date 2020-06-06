@@ -19,11 +19,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="TAMAMLANAN SİPARİŞLER"
+            android:layout_weight="15"
             android:gravity="center"
+            android:text="TAMAMLANAN SİPARİŞLER"
             android:textColor="#35E43C"
             android:textStyle="bold"
-            android:layout_weight="15">
+            app:fontFamily="@font/acme">
 
         </TextView>
 
@@ -36,6 +37,7 @@
             android:layout_weight="5">
 
         </TextView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,9 +58,6 @@
             android:layout_weight="80">
 
         </ListView>
-
-
-
 
 
     </LinearLayout>

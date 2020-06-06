@@ -1,6 +1,5 @@
 package com.example.garsonason;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,9 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,10 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.UUID;
 
 public class customerMenuActivity extends AppCompatActivity {
 
@@ -56,7 +51,7 @@ public class customerMenuActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (sepet.size()<=0){
+        if (sepet.size() <= 0) {
             siparisVer.setVisibility(View.GONE);
         }
     }
@@ -74,14 +69,13 @@ public class customerMenuActivity extends AppCompatActivity {
         arrayList7 = new ArrayList<>();
 
 
-        siparisVer=findViewById(R.id.siparisVer);
+        siparisVer = findViewById(R.id.siparisVer);
         sepet = new ArrayList<urunModel>();
         arrayList3 = new ArrayList<>();
 
 
-
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, arrayList);
-        arrayAdapter2= new sepetAdapter(getApplicationContext(),R.layout.custom_listview_1, sepet);
+        arrayAdapter2 = new sepetAdapter(getApplicationContext(), R.layout.custom_listview_1, sepet);
 
         final String musteriId = getIntent().getExtras().getString("musId");
         urunleriListele_Musteri_ListView = findViewById(R.id.urunleriListele_Musteri_ListView);
@@ -93,8 +87,6 @@ public class customerMenuActivity extends AppCompatActivity {
         System.out.println(musteriId);
 
 
-
-
         final DatabaseReference myRef = database.getReference().child("Isletme_Urunler_Bilgi").child(isletmeId);
         final DatabaseReference myRef2 = database.getReference().child("Isletme_Urunler_Bilgi").child(isletmeId).child(musteriId).child("sepet");
         myRef2.addValueEventListener(new ValueEventListener() {
@@ -102,7 +94,7 @@ public class customerMenuActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String a = ds.getKey();
-                arrayList7.add(a);
+                    arrayList7.add(a);
                 }
             }
 
@@ -149,48 +141,46 @@ public class customerMenuActivity extends AppCompatActivity {
 
                 /*String deneme=arrayList.get(position);
                 Toast.makeText(getApplicationContext(), deneme, Toast.LENGTH_SHORT).show();*/
-                final String urunAdi=arrayList4.get(position);
+                final String urunAdi = arrayList4.get(position);
                 String urunDurum = "Beklemede";
 
                 String fiyat = arrayList3.get(position);
                 urunModel urunmodel = new urunModel();
-                urunmodel.urunAdi=urunAdi;
+                urunmodel.urunAdi = urunAdi;
                 urunmodel.durum = urunDurum;
 
-                String olan=null;
-                if (sepet.size()>0){
-                    for(int i=0;i<=sepet.size()-1;i++){
-                        if(sepet.get(i).urunAdi.equals(urunAdi)){
-                            olan=String.valueOf(i);
+                String olan = null;
+                if (sepet.size() > 0) {
+                    for (int i = 0; i <= sepet.size() - 1; i++) {
+                        if (sepet.get(i).urunAdi.equals(urunAdi)) {
+                            olan = String.valueOf(i);
                         }
                     }
-                    if (olan!=null){
-                        sepet.get(Integer.parseInt(olan)).miktar+=1;
+                    if (olan != null) {
+                        sepet.get(Integer.parseInt(olan)).miktar += 1;
 
-                    }else{
-                        urunmodel.miktar=1;
+                    } else {
+                        urunmodel.miktar = 1;
                         sepet.add(urunmodel);
 
                     }
-                }
-                else{
-                    urunmodel.miktar=1;
+                } else {
+                    urunmodel.miktar = 1;
                     sepet.add(urunmodel);
                 }
-                urunmodel.fiyat=Integer.valueOf(fiyat);
+                urunmodel.fiyat = Integer.valueOf(fiyat);
                 ArrayList<urunModel> urunListesi = new ArrayList<>();
 //                urunModel deneme = new urunModel(urunmodel.urunAdi,urunmodel.miktar,urunmodel.fiyat);
 
 
-
 //                sepet.add(deneme);
                 sepettekileriListele_MusteriListView.setAdapter(arrayAdapter2);
-                if (sepet.size()>0){
+                if (sepet.size() > 0) {
                     siparisVer.setVisibility(View.VISIBLE);
                 }
                 {
-                };
-
+                }
+                ;
 
 
             }
@@ -213,9 +203,7 @@ public class customerMenuActivity extends AppCompatActivity {
         });
 
 
-
-
-       siparisVer.setOnClickListener(new View.OnClickListener() {
+        siparisVer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(customerMenuActivity.this);
@@ -226,8 +214,8 @@ public class customerMenuActivity extends AppCompatActivity {
                 builder.setPositiveButton("ONAYLA", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        for (int i=0;i<sepet.size();i++){
-                            sepet.get(i).fiyat*=sepet.get(i).miktar;
+                        for (int i = 0; i < sepet.size(); i++) {
+                            sepet.get(i).fiyat *= sepet.get(i).miktar;
                         }
 
 
@@ -239,9 +227,8 @@ public class customerMenuActivity extends AppCompatActivity {
                         intent.putExtras(bundle);
 
 
-
                         arrayAdapter2.notifyDataSetChanged();
-                        if (sepet.size()<=0){
+                        if (sepet.size() <= 0) {
                             siparisVer.setVisibility(View.GONE);
                         }
                         dialog.dismiss();
@@ -264,7 +251,6 @@ public class customerMenuActivity extends AppCompatActivity {
             }
 
         });
-
 
 
     }

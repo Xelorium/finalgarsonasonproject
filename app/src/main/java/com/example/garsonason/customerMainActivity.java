@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +34,17 @@ public class customerMainActivity extends AppCompatActivity {
         System.out.println(musteriId);
         idBusiness = findViewById(R.id.idBusiness);
         codeSubmit_Button = findViewById(R.id.codeSubmit_Button);
+
+        Button reportBug = (Button) findViewById(R.id.reportBug_Button);
+
+        reportBug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(customerMainActivity.this, reportBugActivity.class);
+                startActivity(intent);
+            }
+        });
+
         codeSubmit_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +61,7 @@ public class customerMainActivity extends AppCompatActivity {
                             keepData model = ds.getValue(keepData.class);
 
 
-                             if (model.getIsletmeKodu().equals(kod)) {
+                            if (model.getIsletmeKodu().equals(kod)) {
 
                                 Intent intent = new Intent(customerMainActivity.this, customerPanelActivity.class);
                                 intent.putExtra("isId", model.getIsletmeKodu());
@@ -66,7 +75,6 @@ public class customerMainActivity extends AppCompatActivity {
                         }
 
 
-
                     }
 
                     @Override
@@ -78,7 +86,7 @@ public class customerMainActivity extends AppCompatActivity {
         });
     }
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(customerMainActivity.this);
 
         builder.setTitle("ÇIKIŞ YAP");

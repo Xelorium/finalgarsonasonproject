@@ -1,11 +1,11 @@
 package com.example.garsonason;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,8 +27,6 @@ public class customerListOrdersActivity extends AppCompatActivity {
     private ArrayList<String> arrayList2;
     private ArrayList<String> arrayList3;
     private FirebaseAuth mAuth;
-
-
 
 
     @Override
@@ -69,10 +67,10 @@ public class customerListOrdersActivity extends AppCompatActivity {
                             for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                 String a = ds.getKey();
                                 keepData_3 model = ds.getValue(keepData_3.class);
-                                if (model.getDurum().equals("Onaylandı")||model.getDurum().equals("İptal Edildi")|| model.getDurum().equals("Beklemede") ){
-                                    arrayList.add("Ürün Adı: " +model.getUrunAdi()+"  |  Ürün Miktarı: "+model.getMiktar()
-                                            +"\nToplam Fiyat: "+model.getFiyat()
-                                            +"  |  Sipariş Durumu: "+ model.getDurum());
+                                if (model.getDurum().equals("Onaylandı") || model.getDurum().equals("İptal Edildi") || model.getDurum().equals("Beklemede")) {
+                                    arrayList.add("Ürün Adı: " + model.getUrunAdi() + "  |  Ürün Miktarı: " + model.getMiktar()
+                                            + "\nToplam Fiyat: " + model.getFiyat()
+                                            + "  |  Sipariş Durumu: " + model.getDurum());
                                     customerOrdersListView.setAdapter(arrayAdapter);
                                 }
                             }
@@ -86,7 +84,6 @@ public class customerListOrdersActivity extends AppCompatActivity {
                     });
 
 
-
                 }
 
             }
@@ -96,9 +93,6 @@ public class customerListOrdersActivity extends AppCompatActivity {
 
             }
         });
-
-
-
 
 
     }

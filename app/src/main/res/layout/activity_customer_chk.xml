@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".customerChkActivity"
-    android:background="#69A3D400"
-    >
+    android:background="#69A3D400">
 
 
     <TextView
@@ -17,7 +16,8 @@
         android:text="SİPARİŞ ÖZETİ"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        app:fontFamily="@font/acme">
 
     </TextView>
 
@@ -29,14 +29,14 @@
         android:textStyle="bold">
 
     </ListView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toplamTutar"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:gravity="center"
-        />
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,13 +48,13 @@
             android:id="@+id/odemeVazgec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="İPTAL ET"/>
+            android:text="İPTAL ET" />
 
         <Button
             android:id="@+id/odemeYap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ÖDEME YAP"/>
+            android:text="ÖDEME YAP" />
 
     </LinearLayout>
 

@@ -1,13 +1,13 @@
 package com.example.garsonason;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -52,7 +52,7 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                     String a = ds.getKey();
                     final keepData model = ds.getValue(keepData.class);
 
-                    if (model.getKullaniciTuru().equals("musteri")){
+                    if (model.getKullaniciTuru().equals("musteri")) {
 
                         final String kullaniciAdi = model.getKullaniciAdi();
                         final DatabaseReference myRef = database.getReference().child("Isletme_Siparisler").child(isletmeId).child(a).child("sepet");
@@ -73,10 +73,10 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                                             for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                                 String a = ds.getKey();
                                                 keepData_3 model = ds.getValue(keepData_3.class);
-                                                if (model.getDurum().equals("Onaylandı")||model.getDurum().equals("İptal Edildi") ){
-                                                    arrayList.add("Kullanıcı adı: "+kullaniciAdi+ "\nÜrün Adı: " +model.getUrunAdi()+"  |  Ürün Miktarı: "+model.getMiktar()
-                                                            +"\nToplam Fiyat: "+model.getFiyat()
-                                                            +"  |  Sipariş Durumu: "+ model.getDurum());
+                                                if (model.getDurum().equals("Onaylandı") || model.getDurum().equals("İptal Edildi")) {
+                                                    arrayList.add("Kullanıcı adı: " + kullaniciAdi + "\nÜrün Adı: " + model.getUrunAdi() + "  |  Ürün Miktarı: " + model.getMiktar()
+                                                            + "\nToplam Fiyat: " + model.getFiyat()
+                                                            + "  |  Sipariş Durumu: " + model.getDurum());
                                                     completedListView.setAdapter(arrayAdapter);
                                                     arrayAdapter.notifyDataSetChanged();
                                                 }
@@ -92,7 +92,6 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                                     });
 
 
-
                                 }
 
                             }
@@ -104,10 +103,9 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                         });
                     }
                 }
-                if (arrayAdapter.isEmpty()){
+                if (arrayAdapter.isEmpty()) {
                     ordersDone3.setVisibility(View.VISIBLE);
-                }
-                else if(!arrayAdapter.isEmpty()){
+                } else if (!arrayAdapter.isEmpty()) {
                     ordersDone3.setVisibility(View.GONE);
                 }
             }

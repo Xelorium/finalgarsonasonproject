@@ -15,19 +15,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="20"
-        >
+        android:layout_weight="20">
 
         <TextView
-            android:layout_marginTop="20dp"
             android:id="@+id/odemeTutar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="TOPLAM ÖDEME TUTARI"
             android:textColor="#000000"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:fontFamily="@font/acme" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,8 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="65"
-        >
+        android:layout_weight="65">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,13 +68,15 @@
             android:orientation="vertical"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="15dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="KART SAHİBİNİN ADI"
                 android:layout_gravity="center"
+                android:text="KART SAHİBİNİN ADI"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark">
+                app:fontFamily="@font/acme">
 
             </TextView>
 
@@ -96,13 +97,15 @@
             android:orientation="vertical"
 
             android:layout_marginBottom="15dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="KART NUMARASI"
                 android:layout_gravity="center"
+                android:text="KART NUMARASI"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark">
+                app:fontFamily="@font/acme">
 
             </TextView>
 
@@ -124,21 +127,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
+
             <LinearLayout
                 android:layout_marginRight="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SKT"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="SKT"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/acme">
 
-            </TextView>
+                </TextView>
 
                 <com.github.pinball83.maskededittext.MaskedEditText
                     android:id="@+id/sktEdit"
@@ -152,19 +157,20 @@
 
                 </com.github.pinball83.maskededittext.MaskedEditText>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CCV"
                     android:layout_gravity="center"
+                    android:text="CCV"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark">
+                    app:fontFamily="@font/acme">
 
                 </TextView>
 
@@ -192,19 +198,20 @@
             android:gravity="center">
 
             <Button
-            android:id="@+id/chkoutOde"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="ÖDEMEYİ TAMAMLA"
-            android:layout_marginTop="20dp">
+                android:background="@drawable/custom_button_green"
+                android:id="@+id/chkoutOde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ÖDEMEYİ TAMAMLA"
+                android:layout_marginTop="20dp">
 
-        </Button>
+            </Button>
         </LinearLayout>
 
 
-
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -212,6 +219,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/custom_button"
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
