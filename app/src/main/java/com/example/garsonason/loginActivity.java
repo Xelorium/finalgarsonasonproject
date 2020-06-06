@@ -60,6 +60,8 @@ public class loginActivity extends AppCompatActivity {
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Eksik veya yanlış girdi. ", Toast.LENGTH_LONG).show();
+                    progressDialog1.dismiss();
+
                 }
             }
         });
@@ -120,6 +122,7 @@ public class loginActivity extends AppCompatActivity {
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Eksik veya yanlış girdi. " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    progressDialog1.dismiss();
                 }
             }
         });

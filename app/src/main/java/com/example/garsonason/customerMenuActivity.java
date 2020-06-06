@@ -48,6 +48,7 @@ public class customerMenuActivity extends AppCompatActivity {
     private ArrayList<String> arrayList2;
     private ArrayList<String> arrayList5;
     private ArrayList<String> arrayList6;
+    private ArrayList<String> arrayList7;
     private ArrayList<urunModel> sepet;
     private Button siparisVer;
     sepetAdapter arrayAdapter2;
@@ -70,6 +71,7 @@ public class customerMenuActivity extends AppCompatActivity {
         arrayList4 = new ArrayList<>();
         arrayList5 = new ArrayList<>();
         arrayList6 = new ArrayList<>();
+        arrayList7 = new ArrayList<>();
 
 
         siparisVer=findViewById(R.id.siparisVer);
@@ -94,6 +96,22 @@ public class customerMenuActivity extends AppCompatActivity {
 
 
         final DatabaseReference myRef = database.getReference().child("Isletme_Urunler_Bilgi").child(isletmeId);
+        final DatabaseReference myRef2 = database.getReference().child("Isletme_Urunler_Bilgi").child(isletmeId).child(musteriId).child("sepet");
+        myRef2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String a = ds.getKey();
+                arrayList7.add(a);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -133,6 +151,7 @@ public class customerMenuActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), deneme, Toast.LENGTH_SHORT).show();*/
                 final String urunAdi=arrayList4.get(position);
                 String urunDurum = "Beklemede";
+
                 String fiyat = arrayList3.get(position);
                 urunModel urunmodel = new urunModel();
                 urunmodel.urunAdi=urunAdi;

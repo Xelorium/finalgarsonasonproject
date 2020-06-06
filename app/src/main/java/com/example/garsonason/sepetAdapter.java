@@ -47,7 +47,8 @@ public class sepetAdapter extends ArrayAdapter<urunModel> {
         int urunMiktar = getItem(position).getMiktar();
         int urunFiyat = getItem(position).getFiyat();
         String urunDurum = getItem(position).getDurum();
-        urunModel urunmodel = new urunModel(urunAd,urunMiktar,urunFiyat,urunDurum);
+        String siparisId = getItem(position).getSiparisId();
+        urunModel urunmodel = new urunModel(urunAd,urunMiktar,urunFiyat,urunDurum,siparisId);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource,parent,false);

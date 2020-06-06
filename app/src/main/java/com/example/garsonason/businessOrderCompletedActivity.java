@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -34,7 +36,7 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
 
         completedListView = findViewById(R.id.gelenSiparis);
         final String isletmeId = getIntent().getExtras().getString("isId");
-
+        final TextView ordersDone3 = (TextView) findViewById(R.id.ordersDone3);
         arrayList = new ArrayList<>();
         arrayListData = new ArrayList<>();
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, arrayList);
@@ -52,6 +54,7 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
 
                     if (model.getKullaniciTuru().equals("musteri")){
 
+                        final String kullaniciAdi = model.getKullaniciAdi();
                         final DatabaseReference myRef = database.getReference().child("Isletme_Siparisler").child(isletmeId).child(a).child("sepet");
                         myRef.addValueEventListener(new ValueEventListener() {
                             @Override
@@ -71,14 +74,16 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                                                 String a = ds.getKey();
                                                 keepData_3 model = ds.getValue(keepData_3.class);
                                                 if (model.getDurum().equals("Onaylandı")||model.getDurum().equals("İptal Edildi") ){
-                                                    arrayList.add("Ürün Adı: " +model.getUrunAdi()+"  |  Ürün Miktarı: "+model.getMiktar()
+                                                    arrayList.add("Kullanıcı adı: "+kullaniciAdi+ "\nÜrün Adı: " +model.getUrunAdi()+"  |  Ürün Miktarı: "+model.getMiktar()
                                                             +"\nToplam Fiyat: "+model.getFiyat()
                                                             +"  |  Sipariş Durumu: "+ model.getDurum());
                                                     completedListView.setAdapter(arrayAdapter);
+                                                    arrayAdapter.notifyDataSetChanged();
                                                 }
                                             }
 
                                         }
+
 
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -98,6 +103,12 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                             }
                         });
                     }
+                }
+                if (arrayAdapter.isEmpty()){
+                    ordersDone3.setVisibility(View.VISIBLE);
+                }
+                else if(!arrayAdapter.isEmpty()){
+                    ordersDone3.setVisibility(View.GONE);
                 }
             }
 

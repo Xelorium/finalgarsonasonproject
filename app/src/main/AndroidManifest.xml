@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".customerPanelActivity"></activity>
+        <activity android:name=".busnismusnisActivity"></activity>
+        <activity android:name=".customerPanelActivity" />
         <activity android:name=".customerListOrdersActivity" />
         <activity android:name=".businessOrderCompletedActivity" />
         <activity android:name=".businessOrderIdleActivity" />

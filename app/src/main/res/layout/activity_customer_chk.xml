@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".customerChkActivity">
+    tools:context=".customerChkActivity"
+    android:background="#69A3D400"
+    >
 
 
     <TextView

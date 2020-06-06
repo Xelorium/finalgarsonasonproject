@@ -48,6 +48,7 @@ public class businessMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business_main);
 
+
         businessAddProduct_Add_Button = findViewById(R.id.businessAddProduct_Add_Button);
         listeleButton = findViewById(R.id.listele_Button);
         gelenSiparis = findViewById(R.id.gelenSiparisButton);
@@ -68,7 +69,7 @@ public class businessMainActivity extends AppCompatActivity {
                     String a = ds.getKey();
                     keepData model = ds.getValue(keepData.class);
                     if (isletmeId.equals(a)){
-                        userId.setText("Kullanıcı adı: "+ model.getKullaniciAdi());
+                        userId.setText("Kullanıcı Adı: "+ model.getKullaniciAdi());
                     }
 
                 }
@@ -118,6 +119,7 @@ public class businessMainActivity extends AppCompatActivity {
                 Intent intent = new Intent(businessMainActivity.this, businessOrderIdleActivity.class);
                 intent.putExtra("isId", isletmeId);
                 startActivity(intent);
+
 
             }
         });

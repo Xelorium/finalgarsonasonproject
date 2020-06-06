@@ -9,17 +9,28 @@ public class urunModel implements Serializable {
     public Integer miktar;
     public Integer fiyat;
     public String durum;
+    public String siparisId;
 
 
 
 
 
-    public urunModel(String urunAdi, Integer miktar, Integer fiyat,String durum) {
+    public urunModel(String urunAdi, Integer miktar, Integer fiyat,String durum, String siparisId) {
         this.urunAdi = urunAdi;
         this.miktar = miktar;
         this.fiyat = fiyat;
         this.durum = durum;
+        this.siparisId = siparisId;
 
+    }
+
+
+    public String getSiparisId() {
+        return siparisId;
+    }
+
+    public void setSiparisId(String siparisId) {
+        this.siparisId = siparisId;
     }
     public String getDurum() {
         return durum;

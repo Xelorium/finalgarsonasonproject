@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:gravity="right">
+    android:gravity="right"
+    android:background="#69A3D400"
+    >
 
     <Button
         android:id="@+id/settings"

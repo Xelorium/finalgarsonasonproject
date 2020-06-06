@@ -5,6 +5,11 @@ public class customerProductAdapter {
     private String urunAdi;
     private String urunFiyat;
     private String urunTipi;
+    private String siparisId;
+
+    public String getSiparisId() {
+        return siparisId;
+    }
 
     public String getUrunDurumu() {
         return urunDurumu;
@@ -20,12 +25,13 @@ public class customerProductAdapter {
 
     }
 
-    public customerProductAdapter(String date, String urunAdi, String urunFiyat, String urunTipi, String urunDurumu) {
+    public customerProductAdapter(String date, String urunAdi, String urunFiyat, String urunTipi, String urunDurumu,String siparisId) {
         this.date = date;
         this.urunAdi = urunAdi;
         this.urunFiyat = urunFiyat;
         this.urunTipi = urunTipi;
         this.urunDurumu = urunDurumu;
+        this.siparisId = siparisId;
     }
 
     public String getkayitTarihi() {

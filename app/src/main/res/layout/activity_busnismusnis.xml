@@ -18,9 +18,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:id="@+id/customerNameTextView"
             android:text="GELEN SİPARİŞLER"
             android:gravity="center"
-            android:textColor="#E1A100"
+            android:textColor="#E31919"
             android:textStyle="bold"
             android:layout_weight="15">
 
@@ -31,15 +32,16 @@
             android:layout_height="0dp"
             android:text="--------------------------------------------"
             android:layout_gravity="center"
-            android:textColor="#E1A100"
+            android:textColor="#E31919"
             android:layout_weight="5">
 
         </TextView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TÜM SİPARİŞLER TAMAMLANMIŞTIR."
-            android:id="@+id/ordersDone2"
+            android:id="@+id/ordersDone"
             android:textStyle="bold"
             android:textColor="#10D818"
             android:textAlignment="center"
@@ -49,20 +51,26 @@
         </TextView>
 
         <ListView
-            android:id="@+id/gelenSiparisListview"
+            android:id="@+id/idleListView2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="80">
 
         </ListView>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Gerİ Dön"
+            android:id="@+id/businessGetBackButton">
+
+        </Button>
 
 
 
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>

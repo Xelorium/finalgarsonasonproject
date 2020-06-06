@@ -124,8 +124,10 @@ public class customerPayActivity extends AppCompatActivity {
                         progressDialog1.show();
 
 
+
                         String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                         database_Ref = FirebaseDatabase.getInstance().getReference().child("Isletme_Siparisler").child(isletmeId).child(musteriId).child("sepet").push().child(date);
+
                         database_Ref.setValue(odemeOzet).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {

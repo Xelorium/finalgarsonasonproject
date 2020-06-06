@@ -50,7 +50,7 @@ public class customerPanelActivity extends AppCompatActivity {
                     String a = ds.getKey();
                     keepData model = ds.getValue(keepData.class);
                     if (musteriId.equals(a)){
-                        customerPostUserId.setText("Kullanıcı adı: "+ model.getKullaniciAdi());
+                        customerPostUserId.setText("Kullanıcı Adı: "+ model.getKullaniciAdi());
                     }
 
                 }

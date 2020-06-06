@@ -6,7 +6,9 @@
     android:gravity="right"
     android:orientation="vertical"
     tools:context=".loginActivity"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:background="#69A3D400"
+    >
 
 
     <LinearLayout
@@ -117,7 +119,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="İşletme değiştir"
+                android:text="İşletme değİştİr"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/customerChangeisId">
@@ -149,7 +151,7 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Hata Bildir"
+                android:text="Hata Bİldİr"
                 android:textSize="15dp" />
         </LinearLayout>
 

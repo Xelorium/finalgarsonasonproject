@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".customerPayActivity"
     android:weightSum="100"
+    android:background="#69A3D400"
+
     >
 
     <LinearLayout
