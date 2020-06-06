@@ -46,7 +46,6 @@
 
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="65"
         android:orientation="vertical"
@@ -55,8 +54,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="QR Kodunu Okutun:"
             android:layout_gravity="center"
-            android:text="İşletme Kodunu Girin:"
+            android:textColor="#3F51B5"
+            android:textSize="25dp"
+            app:fontFamily="@font/acme"
+            android:layout_marginBottom="40dp">
+
+        </TextView>
+
+    <SurfaceView
+
+        android:id="@+id/barcodeOku"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="480px">
+
+    </SurfaceView>
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtResult"
+            android:text="QR Kodu Bekleniyor..."
+            >
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ya Da İşletme Kodunu Girin:"
             android:textColor="#3F51B5"
             android:textSize="25dp"
             app:fontFamily="@font/acme" />
