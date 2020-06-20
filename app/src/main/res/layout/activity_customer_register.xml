@@ -66,6 +66,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:inputType="textPassword"
                 android:id="@+id/customerRegister_password_Edittext"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
@@ -77,6 +78,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:inputType="textPassword"
                 android:id="@+id/customerRegister_passwordRepeat_Edittext"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"

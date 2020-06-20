@@ -43,16 +43,23 @@ public class forgotPasswordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = passwordResetEdittext.getText().toString();
 
-                mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Şifre sıfırlama talebiniz e-postanıza gönderilmiştir.", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Geçersiz e-posta adresi", Toast.LENGTH_SHORT).show();
+                if (!email.isEmpty()){
+
+                    mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Şifre sıfırlama talebiniz e-postanıza gönderilmiştir.", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Geçersiz e-posta adresi", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Alanları boş bırakmayın.", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

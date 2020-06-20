@@ -46,6 +46,18 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="80">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MENÜNÜZDE ÜRÜN BULUNMAMAKTADIR."
+            android:id="@+id/ordersDone5"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:visibility="gone">
+
+        </TextView>
 
         <ListView
             android:layout_marginLeft="10dp"

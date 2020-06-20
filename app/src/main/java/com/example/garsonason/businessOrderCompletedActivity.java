@@ -103,11 +103,7 @@ public class businessOrderCompletedActivity extends AppCompatActivity {
                         });
                     }
                 }
-                if (arrayAdapter.isEmpty()) {
-                    ordersDone3.setVisibility(View.VISIBLE);
-                } else if (!arrayAdapter.isEmpty()) {
-                    ordersDone3.setVisibility(View.GONE);
-                }
+
             }
 
             @Override

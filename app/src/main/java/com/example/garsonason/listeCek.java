@@ -1,8 +1,10 @@
 package com.example.garsonason;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,7 @@ public class listeCek extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
+        final TextView ordersDone5 = (TextView)findViewById(R.id.ordersDone5);
         arrayList = new ArrayList<>();
         urunListele_ListView = findViewById(R.id.urunleriListele_ListView);
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, arrayList);
@@ -46,6 +49,13 @@ public class listeCek extends AppCompatActivity {
                     arrayList.add("Ürün Adı: " + model.geturunAdi() + "\n" + "Ürün Türü: " + model.geturunTipi() + "\n" + "Ürün Fiyatı: " + model.geturunFiyat() + "TL");
 
                     urunListele_ListView.setAdapter(arrayAdapter);
+                }
+
+                if (arrayAdapter.isEmpty()) {
+                    ordersDone5.setVisibility(View.VISIBLE);
+                }
+                if (!arrayAdapter.isEmpty()) {
+                    ordersDone5.setVisibility(View.GONE);
                 }
             }
 

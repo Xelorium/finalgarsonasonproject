@@ -79,6 +79,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:hint="Şifre"
+                    android:inputType="textPassword"
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="20dp" />
@@ -89,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
+                    android:inputType="textPassword"
                     android:hint="Şifre Tekrarı"
                     android:singleLine="true"
                     android:textAlignment="center"

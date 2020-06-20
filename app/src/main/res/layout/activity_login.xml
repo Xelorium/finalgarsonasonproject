@@ -38,7 +38,6 @@
 
             <EditText
                 android:id="@+id/userId_Edittext"
-                android:text="i@gmail.com"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -57,7 +56,6 @@
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
                 android:hint="Şifre"
-                android:text="aslan1905"
                 android:inputType="textPassword"
                 android:textAlignment="center"
                 android:textSize="20dp" />
